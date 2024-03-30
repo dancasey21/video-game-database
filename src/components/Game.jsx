@@ -4,13 +4,22 @@ const Game = ({ game }) => {
   return (
     <div className="gameResult">
       <img src={game.background_image} />
-      <p>{game.metacritic}</p>
-      <Link to={"/game/" + game.slug}>
-        <h1>{game.name}</h1>
-      </Link>
-      <p>{game.added}</p>
-      <p>Released Date: {game.released}</p>
-      <p>Genre: </p>
+      <div className="gameDetails">
+        <div className="metacritic">
+          <p>{game.metacritic}</p>
+        </div>
+        <Link to={"/game/" + game.slug}>
+          <h1>{game.name}</h1>
+        </Link>
+
+        <p>Released Date: {game.released}</p>
+        <p>
+          Genre:
+          {game.genres.map((item) => {
+            return item.name;
+          })}
+        </p>
+      </div>
     </div>
   );
 };

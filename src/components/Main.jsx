@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { selectGameData, selectSearchTerm } from "../redux/gameSlice";
-import GameInfo from "./GameInfo";
+
 import Game from "./Game";
 import Search from "./Search";
-import { Routes, Route } from "react-router";
+import Header from "./Header";
 
 const Main = () => {
   const gameData = useSelector(selectGameData);
@@ -22,8 +22,6 @@ const Main = () => {
 
   return (
     <>
-      <Search />
-
       <div className="gameResults">
         {filteredData.map((game) => {
           return <Game key={game.id} game={game} />;

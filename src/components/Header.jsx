@@ -1,8 +1,17 @@
+import { Link } from "react-router-dom";
+import Search from "./Search";
+
 const Header = () => {
   return (
-    <div>
-      <h1>RAWG</h1>
-    </div>
+    <>
+      <div className="header">
+        <Link to={"/"}>
+          <h1>RAWG</h1>
+        </Link>
+        <Search />
+        <Link to={"/account"}>Account</Link>
+      </div>
+    </>
   );
 };
 

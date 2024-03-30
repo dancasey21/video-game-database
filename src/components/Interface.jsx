@@ -2,6 +2,8 @@ import Header from "./Header";
 import Main from "./Main";
 import GameInfo from "./GameInfo";
 import { Routes, Route } from "react-router";
+import Index from "./account";
+import Search from "./Search";
 
 const Interface = () => {
   return (
@@ -13,6 +15,7 @@ const Interface = () => {
         <Routes>
           <Route path="/game/:slug" element={<GameInfo />} />
           <Route path="/" element={<Main />} />
+          <Route path="/account" element={<Index />} />
         </Routes>
       </main>
       <footer></footer>
