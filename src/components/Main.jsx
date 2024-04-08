@@ -3,7 +3,6 @@ import { selectGameData, selectSearchTerm } from "../redux/gameSlice";
 
 import Game from "./Game";
 import Search from "./Search";
-import Header from "./Header";
 
 const Main = () => {
   const gameData = useSelector(selectGameData);
@@ -22,6 +21,7 @@ const Main = () => {
 
   return (
     <>
+      <Search />
       <div className="gameResults">
         {filteredData.map((game) => {
           return <Game key={game.id} game={game} />;

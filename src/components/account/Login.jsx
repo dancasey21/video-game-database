@@ -4,6 +4,7 @@ import { selectUser, setLoggedIn, setScreen } from "../../redux/accountSlice";
 import AccountForm from "./AccountForm";
 import sha256 from "sha256";
 import { setMessage } from "../../redux/gameSlice";
+import axios from "axios";
 
 const Login = () => {
   const [userInput, setUserInput] = useState({});
@@ -14,8 +15,12 @@ const Login = () => {
     setUserInput({ ...userInput, [e.target.id]: e.target.value });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    const { data } = await axios.get(
+      "http://localhost:6001/user/:id",
+      userInput
+    );
     const hashedPassword = sha256(userInput.password + "gaming");
 
     if (user.password === hashedPassword) {
@@ -31,7 +36,7 @@ const Login = () => {
     <>
       <h2>Login</h2>
       <form onInput={onInput} onSubmit={onSubmit}>
-        <AccountForm />
+        <AccountForm name="Login" />
       </form>
     </>
   );

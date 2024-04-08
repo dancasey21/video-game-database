@@ -6,7 +6,7 @@ import {
   setScreen,
 } from "../../redux/accountSlice";
 import Login from "./Login";
-import Dashboard from "./Dashboard";
+import Account from "./Account";
 
 const Index = () => {
   const screen = useSelector(selectScreen);
@@ -37,7 +37,7 @@ const Index = () => {
       </div>
       {screen === 0 && <SignUp />}
       {screen === 1 && <Login />}
-      {screen === 2 && <Dashboard />}
+      {screen === 2 && <Account />}
     </>
   );
 };

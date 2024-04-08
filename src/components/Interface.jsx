@@ -3,7 +3,7 @@ import Main from "./Main";
 import GameInfo from "./GameInfo";
 import { Routes, Route } from "react-router";
 import Index from "./account";
-import Search from "./Search";
+
 
 const Interface = () => {
   return (

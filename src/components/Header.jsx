@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Search from "./Search";
 
 const Header = () => {
   return (
@@ -8,8 +7,8 @@ const Header = () => {
         <Link to={"/"}>
           <h1>RAWG</h1>
         </Link>
-        <Search />
-        <Link to={"/account"}>Account</Link>
+
+        <Link to={"/account"}>Sign Up / Login</Link>
       </div>
     </>
   );

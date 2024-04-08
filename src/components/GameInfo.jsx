@@ -21,7 +21,6 @@ const GameInfo = () => {
   };
   return (
     <div className="gameInfo">
-      {/* <p>{gameDetails && gameDetails.creators_count}</p> */}
       <div>
         <Link to={"/"}>
           <span>HOME</span>
@@ -70,7 +69,7 @@ const GameInfo = () => {
         </div>
         <div>
           <h3>Website</h3>
-          <a>{gameDetails.website}</a>
+          <a href={gameDetails.website}>{gameDetails.website}</a>
         </div>
       </div>
     </div>

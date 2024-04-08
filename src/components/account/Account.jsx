@@ -1,12 +1,12 @@
 import { setLoggedIn, setScreen } from "../../redux/accountSlice";
 import { useDispatch } from "react-redux";
 
-const Dashboard = () => {
+const Account = () => {
   const dispatch = useDispatch();
 
   return (
     <>
-      <p>Dashboard</p>
+      <p>Account</p>
       <button
         onClick={() => {
           dispatch(setLoggedIn());
@@ -19,4 +19,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Account;

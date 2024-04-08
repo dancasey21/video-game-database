@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setNewUser, setScreen } from "../../redux/accountSlice";
 import AccountForm from "./AccountForm";
+import axios from "axios";
 
 const SignUp = () => {
   const [userInput, setUserInput] = useState({});
@@ -11,9 +12,11 @@ const SignUp = () => {
     setUserInput({ ...userInput, [e.target.id]: e.target.value });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     dispatch(setNewUser(userInput));
+    const { data } = await axios.post("http://localhost:6001/user", userInput);
+
     dispatch(setScreen(1));
   };
 
@@ -22,7 +25,7 @@ const SignUp = () => {
     <>
       <h2>Sign Up</h2>
       <form onInput={onInput} onSubmit={onSubmit}>
-        <AccountForm />
+        <AccountForm name="SignUp" />
       </form>
     </>
   );
